@@ -6,8 +6,8 @@ from protobufs.fallalert_pb2 import FallAlarmRequest
 from protobufs.fallalert_pb2_grpc import FallAlarmServiceStub
 
 # make an RPC request
-channel = grpc.insecure_channel("10.60.108.95:8005")
-# channel = grpc.insecure_channel("localhost:8005")
+# channel = grpc.insecure_channel("10.60.108.95:8005")
+channel = grpc.insecure_channel("localhost:8005")
 
 client = FallAlarmServiceStub(channel)
 
