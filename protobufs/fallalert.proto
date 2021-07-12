@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message FallAlarmRequest {
+    string ws = 1;
+    bool get_image = 2;
+    string gpu = 3;
+}
+message Coordinates {
+    int32 left = 1;
+    int32 top = 2;
+    int32 right = 3;
+    int32 down = 4;
+}
+message FallAlarmResponse {
+    repeated Coordinates coordinates = 1;
+    bool alarm = 2;
+    string timestamp = 3;
+    int32 width = 4;
+    int32 height = 5;
+    repeated float confidences = 6;
+    string image_bytes = 7;
+}
+message FallDetectResponse {
+    string name = 1;
+    repeated Coordinates coordinates = 2;
+}
+
+service FallAlarmService {
+    rpc Alarm(FallAlarmRequest) returns (stream FallAlarmResponse){}
+}

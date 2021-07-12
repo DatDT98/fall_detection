@@ -1,0 +1,2 @@
+2021-04-19 16:53:12,470 [INFO]: MainProcess video.py(cli:111) >> neural network device: cuda
+2021-04-19 16:53:12,470 [INFO]: MainProcess multistreamloader.py(generateStreams:33) >> Initialising stream: /home/datdt/model_AIV/falldetection_openpifpaf/test/input/fall-01-cam0.mp4

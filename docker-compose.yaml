@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  fall-service:
+    image: fall_service:latest
+    #restart: always
+    volumes:
+      - ./:/fall_detection_service
+    ports:
+      - 8005:50054
+    entrypoint: ["python3.7", "video.py" ]
