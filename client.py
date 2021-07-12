@@ -11,7 +11,7 @@ channel = grpc.insecure_channel("localhost:8005")
 
 client = FallAlarmServiceStub(channel)
 
-request = FallAlarmRequest(ws="./50waystofall.mp4", gpu="cpu", get_image=True)
+# request = FallAlarmRequest(ws="./50waystofall.mp4", gpu="cpu", get_image=True)
 results = client.Alarm(request)
 for result in results:
     np_array = np.frombuffer(base64.b64decode(result.image_bytes), np.uint8)
